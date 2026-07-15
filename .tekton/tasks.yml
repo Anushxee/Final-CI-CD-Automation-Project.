@@ -29,3 +29,12 @@ spec:
     - name: deploy
       taskRef:
         name: openshift-client
+
+    - name: nose
+      taskSpec:
+        steps:
+      - name: nose
+        image: python:3.11
+        script: |
+          pip install nose
+          nosetests
