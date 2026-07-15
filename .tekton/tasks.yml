@@ -1,0 +1,31 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: final-ci-cd-pipeline
+
+spec:
+  tasks:
+
+    - name: cleanup
+      taskRef:
+        name: cleanup
+
+    - name: git-clone
+      taskRef:
+        name: git-clone
+
+    - name: flake8
+      taskRef:
+        name: flake8
+
+    - name: nose-test
+      taskRef:
+        name: nose-test
+
+    - name: buildah
+      taskRef:
+        name: buildah
+
+    - name: deploy
+      taskRef:
+        name: openshift-client
