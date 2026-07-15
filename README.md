@@ -1,4 +1,4 @@
-# Final-CI-CD-Automation-Project
+# CI-CD Final Project
 
 ## Project Overview
 
